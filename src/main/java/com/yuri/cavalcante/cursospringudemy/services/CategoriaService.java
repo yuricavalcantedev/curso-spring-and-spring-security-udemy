@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Categoria;
 import com.yuri.cavalcante.cursospringudemy.repositories.CategoriaRepository;
+import com.yuri.cavalcante.cursospringudemy.resourses.exceptions.ObjectNotFoundException;
+
 
 @Service
 public class CategoriaService {
@@ -14,8 +16,8 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	public Categoria buscar(Integer id) {
-		Optional<Categoria> categoria = categoriaRepository.findById(id);
-		return categoria.orElse(null);
+	public Categoria buscar(Integer id){
+		Optional<Categoria> categoria = categoriaRepository.findById(id); 
+		return categoria.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: " + categoria.get().getId()));  
 	}
 }
