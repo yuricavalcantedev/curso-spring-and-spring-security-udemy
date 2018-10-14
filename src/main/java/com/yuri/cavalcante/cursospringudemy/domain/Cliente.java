@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CollectionId;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.yuri.cavalcante.cursospringudemy.domain.enums.TipoCliente;
 
 @Entity
@@ -33,11 +34,14 @@ public class Cliente implements Serializable{
 	private Integer tipo;
 	
 	@OneToMany(mappedBy = "cliente")
+	@JsonManagedReference
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@ElementCollection
 	@CollectionTable(name="telefones")
 	private Set<String> telefones = new HashSet<>();
+	
+	public Cliente() {}
 	
 	
 	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
