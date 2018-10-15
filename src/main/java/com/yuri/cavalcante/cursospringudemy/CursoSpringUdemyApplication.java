@@ -1,5 +1,6 @@
 package com.yuri.cavalcante.cursospringudemy;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,20 @@ import com.yuri.cavalcante.cursospringudemy.domain.Cidade;
 import com.yuri.cavalcante.cursospringudemy.domain.Cliente;
 import com.yuri.cavalcante.cursospringudemy.domain.Endereco;
 import com.yuri.cavalcante.cursospringudemy.domain.Estado;
+import com.yuri.cavalcante.cursospringudemy.domain.Pagamento;
+import com.yuri.cavalcante.cursospringudemy.domain.PagamentoComBoleto;
+import com.yuri.cavalcante.cursospringudemy.domain.PagamentoComCartao;
+import com.yuri.cavalcante.cursospringudemy.domain.Pedido;
 import com.yuri.cavalcante.cursospringudemy.domain.Produto;
+import com.yuri.cavalcante.cursospringudemy.domain.enums.EstadoPagamento;
 import com.yuri.cavalcante.cursospringudemy.domain.enums.TipoCliente;
 import com.yuri.cavalcante.cursospringudemy.repositories.CategoriaRepository;
 import com.yuri.cavalcante.cursospringudemy.repositories.CidadeRepository;
 import com.yuri.cavalcante.cursospringudemy.repositories.ClienteRepository;
 import com.yuri.cavalcante.cursospringudemy.repositories.EnderecoRepository;
 import com.yuri.cavalcante.cursospringudemy.repositories.EstadoRepository;
+import com.yuri.cavalcante.cursospringudemy.repositories.PagamentoRepository;
+import com.yuri.cavalcante.cursospringudemy.repositories.PedidoRepository;
 import com.yuri.cavalcante.cursospringudemy.repositories.ProdutoRepository;
 
 @SpringBootApplication
@@ -43,6 +51,12 @@ public class CursoSpringUdemyApplication implements CommandLineRunner{
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private PedidoRepository pedidoRepository;
+	
+	@Autowired
+	private PagamentoRepository pagamentoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursoSpringUdemyApplication.class, args);
@@ -93,6 +107,23 @@ public class CursoSpringUdemyApplication implements CommandLineRunner{
 		
 		clienteRepository.save(cli1);
 		enderecoRepository.saveAll(Arrays.asList(e1,e2));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		
+		Pedido ped1 = new Pedido(null, sdf.parse("30/09/2017 10:32"), cli1,e1);
+		Pedido ped2 = new Pedido(null, sdf.parse("10/10/2017 10:35"), cli1,e2);
+		
+		Pagamento pagto1 = new PagamentoComCartao(null, EstadoPagamento.QUITADADO, ped1,6);
+		ped1.setPagamento(pagto1);
+		
+		Pagamento pagto2 = new PagamentoComBoleto(null, EstadoPagamento.PENDENTE, ped2, sdf.parse("20/10/2017 00:00"), null);
+		ped2.setPagamento(pagto2);
+		
+		cli1.getPedidos().addAll(Arrays.asList(ped1,ped2));
+		
+		pedidoRepository.saveAll(Arrays.asList(ped1,ped2));
+		pagamentoRepository.saveAll(Arrays.asList(pagto1,pagto2));
+		
 	}
 	
 	
