@@ -1,6 +1,9 @@
 package com.yuri.cavalcante.cursospringudemy.resourses;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Categoria;
+import com.yuri.cavalcante.cursospringudemy.dto.CategoriaDTO;
 import com.yuri.cavalcante.cursospringudemy.services.CategoriaService;
 
 @RestController
@@ -24,6 +28,16 @@ public class CategoriaResource {
 	@Autowired
 	private CategoriaService categoriaService;
 
+	@GetMapping
+	public ResponseEntity<List<CategoriaDTO>> findAll() {
+		
+		List<Categoria> categorias = new ArrayList<>();
+		categorias = categoriaService.findAll();
+		
+		List<CategoriaDTO> categoriasDTO = categorias.stream().map(categoria -> new CategoriaDTO(categoria)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(categoriasDTO);
+	}
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Categoria> find(@PathVariable Integer id) {
 

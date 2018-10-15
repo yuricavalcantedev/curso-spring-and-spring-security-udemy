@@ -1,9 +1,11 @@
 package com.yuri.cavalcante.cursospringudemy.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Categoria;
@@ -17,6 +19,11 @@ public class CategoriaService {
 
 	@Autowired
 	private CategoriaRepository categoriaRepository;
+	
+	public List<Categoria> findAll(){
+		
+		return categoriaRepository.findAll();		
+	}
 	
 	public Categoria find(Integer id){
 		Optional<Categoria> categoria = categoriaRepository.findById(id); 
