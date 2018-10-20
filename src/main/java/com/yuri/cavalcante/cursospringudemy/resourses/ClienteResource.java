@@ -23,6 +23,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Cliente;
 import com.yuri.cavalcante.cursospringudemy.dto.ClienteDTO;
+import com.yuri.cavalcante.cursospringudemy.dto.ClienteNewDTO;
 import com.yuri.cavalcante.cursospringudemy.services.ClienteService;
 
 
@@ -52,9 +53,9 @@ public class ClienteResource {
 	}
 
 	@PostMapping
-	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDTO clienteDTO){
+	public ResponseEntity<Void> insert(@Valid @RequestBody ClienteNewDTO clienteNewDTO){
 
-		Cliente cliente = clienteService.fromDTO(clienteDTO);
+		Cliente cliente = clienteService.fromDTO(clienteNewDTO);
 		cliente = clienteService.insert(cliente);
 		URI uri = ServletUriComponentsBuilder
 				.fromCurrentRequest()
