@@ -1,0 +1,155 @@
+[33mcommit afb6f0a163db83a08b921bd981e1944db1bd81eb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sat Oct 20 17:02:24 2018 -0300
+
+    Inserindo novo Cliente com POST
+
+[33mcommit b8e5c1c171a8d8729ae4cef4cefff2c04b3e2629[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sat Oct 20 16:30:32 2018 -0300
+
+    Correcoes: update em CategoriaService e construtor de Pagamento
+
+[33mcommit 0871c7a77ea38398d3cd0db8345f3875638cfa14[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 22:16:04 2018 -0300
+
+    Adicionando métoos GET, PUT e DELETE da entidade Cliente
+
+[33mcommit 17cb3b73e14df91eee31455b97215fee3adf79cb[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 20:10:22 2018 -0300
+
+    Adicionando validação personalizada à Categoria Resource
+
+[33mcommit 9888072bf7459bf7ee6b84d749ff9b0e422d05ef[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 19:39:10 2018 -0300
+
+    Validação Sintática com o BeanValidator
+
+[33mcommit 39a032b049a9307c5c45a81a9f84c7a6a3e3f9ad[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 16:13:36 2018 -0300
+
+    Adicionando Pages ao Categoria
+
+[33mcommit 55b356a2d5742481b5d4a0cda009b9b2526e5ebd[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 15:42:20 2018 -0300
+
+    Listando todas as categorias com CategoriaDTO
+
+[33mcommit b9a8c09283d4b59b095ff92f069808c5f3e01522[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 15:23:03 2018 -0300
+
+    Adicionando Método DELETE  e também ajeitando a chamada da exceção ObjectNotFoundException
+
+[33mcommit 228bd0f6b0aefb73ca587f0f4316818b039047a3[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 13:07:01 2018 -0300
+
+    Adicionando método PUT à Categoria
+
+[33mcommit 2ef5ac7f46b55883502b5513d3be2d2f7bae3cee[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 12:41:11 2018 -0300
+
+    Adicionando método POST na Categoria
+
+[33mcommit d6b6af9b38a4531c1d4564a93c4e9c3788671808[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 05:12:54 2018 -0300
+
+    Atualizacao - utilizando apenas JsoIgnore
+
+[33mcommit c89fd4157868a1c65ebd3d6afff19e2bae9af564[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 05:05:08 2018 -0300
+
+    Adicionando endpoint/pedidos/id ao projeto
+
+[33mcommit dce543fdc65986f4a1cc7da94352c1cc028980f5[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 04:46:59 2018 -0300
+
+    Adicionado ao projeto ItemPedido e ItemPedidoPK
+
+[33mcommit 974134bba91b9aa27281659cc10f576f3803749b[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Mon Oct 15 04:19:13 2018 -0300
+
+    Pedido EstadoPagamento e Pagamento
+
+[33mcommit 06969583d84554ce69c4694d42af2388936281ea[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sun Oct 14 15:17:01 2018 -0300
+
+    Endpoint/clientes/id disponível
+
+[33mcommit 4a21847e3aaca10117108442d8330c4ad4ec701e[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sun Oct 14 15:02:17 2018 -0300
+
+    Cliente TipoCliente Telefones e Endereos inseridos
+
+[33mcommit f076f33a721c267d709c0950e2db9ff8a847d616[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sun Oct 14 14:05:49 2018 -0300
+
+    Adicionando Estado e Cidade
+
+[33mcommit b7c9f89424b762b6138a41635c1b1ad38b7a94e6[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sun Oct 14 14:04:47 2018 -0300
+
+    Adicionando Estado e Cidade ao projeto
+
+[33mcommit 05e1523ee2ee2a1786deb960448bd1c7d240fae3[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Sun Oct 14 12:18:08 2018 -0300
+
+    ajuste no endpoint categoria
+
+[33mcommit a229a50599a2b83f10d4637a326fff069d1f00e8[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 19:06:27 2018 -0300
+
+    Produto e associação ManyToMany
+
+[33mcommit a5ef92c61ba126884da2a38970f001112c0dffd2[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 18:40:09 2018 -0300
+
+    Criando operacao de instanciacao
+
+[33mcommit 68955de1e7e25e7f9c4dda3d948f241d3a57ea11[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 17:57:03 2018 -0300
+
+    Adicionando Repository e Service para Categoria
+
+[33mcommit becc4b19388c77014b93501b3285fefbae09193a[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 17:16:33 2018 -0300
+
+    Banco H2 adicionado ao projeto
+
+[33mcommit b3b1aa425ddb39ce1229473e8ae27856b4042846[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 16:42:02 2018 -0300
+
+    Testando Categoria
+
+[33mcommit c4e4674b0bfd4a7a8ecc7841215364d69089e3b3[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 16:26:04 2018 -0300
+
+    Rest testado
+
+[33mcommit 76299241b229349a87aacd27cbfeb993519722be[m
+Author: yuricavalcantedev <yuricavalcante17@gmail.com>
+Date:   Fri Oct 12 16:10:47 2018 -0300
+
+    Primeiro commit - Projeto criado
