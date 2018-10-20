@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Categoria;
+import com.yuri.cavalcante.cursospringudemy.domain.Cliente;
 import com.yuri.cavalcante.cursospringudemy.dto.CategoriaDTO;
 import com.yuri.cavalcante.cursospringudemy.repositories.CategoriaRepository;
 import com.yuri.cavalcante.cursospringudemy.resourses.exceptions.DataIntegrityException;
@@ -45,8 +46,14 @@ public class CategoriaService {
 	}
 	
 	public Categoria update(Categoria categoria) {
-		find(categoria.getId()); //se não der certo, ele já vai lançar uma exceção
-		return categoriaRepository.save(categoria);
+		Categoria newCategoria = find(categoria.getId()); //se não der certo, ele já vai lançar uma exceção
+		updateData(newCategoria, categoria);
+		return categoriaRepository.save(newCategoria);
+	}
+
+	private void updateData(Categoria newCategoria, Categoria oldCategoria) {
+		newCategoria.setNome(oldCategoria.getNome());
+
 	}
 	
 	public void delete(Integer id) {		 
