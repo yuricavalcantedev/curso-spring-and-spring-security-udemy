@@ -15,4 +15,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Serializable>{
 	@Transactional
 	Cliente findByEmail(String email);
 	
+	Cliente findByCpfOuCnpj(String cpfOuCnpj);
+	
 }
