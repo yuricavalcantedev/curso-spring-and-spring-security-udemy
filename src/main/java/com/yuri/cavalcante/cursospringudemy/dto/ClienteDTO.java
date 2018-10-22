@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
 import com.yuri.cavalcante.cursospringudemy.domain.Cliente;
+import com.yuri.cavalcante.cursospringudemy.services.validation.ClienteUpdate;
 
+@ClienteUpdate
 public class ClienteDTO  implements Serializable{
 	
 	
