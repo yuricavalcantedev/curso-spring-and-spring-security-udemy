@@ -2,23 +2,48 @@ package com.yuri.cavalcante.cursospringudemy.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
+import com.yuri.cavalcante.cursospringudemy.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="Preenchimento obrigatório")
+	@Length(min = 5, max = 120, message= "O nome deve ter ser entre 5 e 120 caracteres")
 	private String nome;
+	
+	@Email
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String email;
+	
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String cpfOuCnpj;
+	
+	
 	private Integer tipo;
 	
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String logradouro;
+	
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String numero;
+	
 	private String complemento;
 	private String bairro;
+	
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String cep;
 	
-	
+	@NotEmpty(message="Preenchimento obrigatório")
 	private String telefone1;
+	
+	
 	private String telefone2;
 	private String telefone3;
 	
@@ -47,10 +72,6 @@ public class ClienteNewDTO implements Serializable{
 		this.cidadeId = cidadeId;
 	}
 		
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	public String getNome() {
 		return nome;
