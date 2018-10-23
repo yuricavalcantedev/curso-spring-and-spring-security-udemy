@@ -26,7 +26,7 @@ import com.yuri.cavalcante.cursospringudemy.dto.CategoriaDTO;
 import com.yuri.cavalcante.cursospringudemy.services.CategoriaService;
 
 @RestController
-@RequestMapping(value="/categorias")
+@RequestMapping(value="/showCategorias")
 public class CategoriaResource {
 
 	@Autowired
