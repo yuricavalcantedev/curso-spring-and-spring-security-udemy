@@ -3,8 +3,8 @@ package com.yuri.cavalcante.cursospringudemy.domain.enums;
 public enum EstadoPagamento {
 	
 	PENDENTE(1,"Pendente"),
-	QUITADADO(2,"Quitado"),
-	CANCELAD(3,"Cancelado");
+	QUITADO(2,"Quitado"),
+	CANCELADO(3,"Cancelado");
 
 	
 	private Integer cod;

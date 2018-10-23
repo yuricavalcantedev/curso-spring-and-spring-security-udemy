@@ -15,12 +15,12 @@ import com.yuri.cavalcante.cursospringudemy.services.PedidoService;
 public class PedidoResource {
 
 	@Autowired
-	private PedidoService categoriaService;
+	private PedidoService pedidoService;
 
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Pedido> find(@PathVariable Integer id) {
 
-		Pedido categoria = categoriaService.find(id);
-		return ResponseEntity.ok(categoria);
+		Pedido pedido = pedidoService.find(id);
+		return ResponseEntity.ok(pedido);
 	}
 }
